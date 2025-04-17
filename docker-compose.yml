@@ -6,3 +6,17 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
+      - ./vite.config.js:/app/vite.config.js
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - vue-network
+
+networks:
+  vue-network:
+    driver: bridge
