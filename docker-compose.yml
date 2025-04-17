@@ -3,7 +3,7 @@ services:
   vue-lgc:
     image: awdren/vue-lgc:latest
     ports:
-      - "8080:81"
+      - "8085:80"
     networks:
       - lgclan
 networks:
